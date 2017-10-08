@@ -1,0 +1,15 @@
+<h3>{{titulo}}</h3>
+<table>
+  <tr>
+    <th>Código</th> <th>Filme</th> <th>Descrição</th> <th>Data</th> <th>Editar</th> <th>Remover</th>
+  </tr>
+  <tr *ngFor='let filme of filmes'>
+    <td>{{filme.codigo}}</td>
+    <td>{{filme.nome}}</td>
+    <td>{{filme.descricao}}</td>
+    <td>{{filme.data}}</td>
+    <td><a href="#">Editar</a></td>
+    <td><a href="#">Remover</a></td>
+  </tr>
+</table>
+<a routerLink="/novo">Novo Filme</a>
