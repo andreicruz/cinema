@@ -12,6 +12,7 @@ import { CrudFilmesService } from "./crud-filmes.service";
 const routes: Routes = [
   { path: '', redirectTo: 'lista', pathMatch: 'full'},
   { path: 'lista', component: ListaFilmesComponent},
+  { path: 'edicao/:cod', component: CadastroFilmesComponent},
   { path: 'novo', component: CadastroFilmesComponent},
 ]
 

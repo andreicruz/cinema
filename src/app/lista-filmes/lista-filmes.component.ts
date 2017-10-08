@@ -17,4 +17,8 @@ export class ListaFilmesComponent implements OnInit {
     this.filmes = this.servico.getFilmes();
   }
 
+  remover(filme:Filme){
+    this.servico.removerFilme(filme);
+  }
+
 }

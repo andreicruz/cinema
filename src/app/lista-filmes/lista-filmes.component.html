@@ -8,8 +8,8 @@
     <td>{{filme.nome}}</td>
     <td>{{filme.descricao}}</td>
     <td>{{filme.data}}</td>
-    <td><a href="#">Editar</a></td>
-    <td><a href="#">Remover</a></td>
+    <td><a [routerLink]="['/edicao', filme.codigo]">Editar</a></td>
+    <td><a routerLink="/lista" (click)="remover(filme)">Remover</a></td>
   </tr>
 </table>
 <a routerLink="/novo">Novo Filme</a>

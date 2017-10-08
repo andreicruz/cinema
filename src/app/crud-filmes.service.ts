@@ -30,4 +30,10 @@ export class CrudFilmesService {
       this.filmes.splice(indice, 1);
     }
   }
+  
+  atualizaFilme(codigo:number, filme:Filme){
+    let indice = this.filmes.indexOf(this.getFilmesPorCodigo(codigo), 0);
+    this.filmes[indice] = filme;
+  }
+
 }
