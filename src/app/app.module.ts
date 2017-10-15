@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { ListaFilmesComponent } from './lista-filmes/lista-filmes.component';
 import { CadastroFilmesComponent } from './cadastro-filmes/cadastro-filmes.component';
 import { CrudFilmesService } from "./crud-filmes.service";
+import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'lista', pathMatch: 'full'},
@@ -20,7 +21,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ListaFilmesComponent,
-    CadastroFilmesComponent
+    CadastroFilmesComponent,
+    CadastroUsuarioComponent
   ],
   imports: [
     BrowserModule,

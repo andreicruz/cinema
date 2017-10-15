@@ -4,7 +4,11 @@ import { Filme } from "./filme";
 @Injectable()
 export class CrudFilmesService {
   filmes: Filme[] = [
-    { codigo: 1, nome:"Kill Bill", descricao:"Teste", data:"08/10/2017" }
+    { codigo: 1, 
+      nome:"Kill Bill", 
+      descricao:"Teste", 
+      data: new Date(),
+      imagem: "images/RoseQuartz.png"}
   ];
 
   autoIncremento:number=2;

@@ -10,9 +10,12 @@
     <input type="text" id="descricao" name="descricao" placeholder="Descrição do Filme"
     [(ngModel)]="filme.descricao">
 
-
     <label for="data">Data</label>
-    <input type="text" id="data" name="data" placeholder="Data de Estréia"    
+    <input type="date" id="data" name="data" placeholder="Data de Estréia"    
+    [(ngModel)]="filme.data">
+
+    <label for="imagem">Cartaz</label>
+    <input type="file" id="imagem" name="imagem" accept=".jpg, .jpeg, .png" placeholder="Imagem de Cartaz"    
     [(ngModel)]="filme.data">
 
     <div class="buttons">
