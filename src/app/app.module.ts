@@ -9,12 +9,16 @@ import { ListaFilmesComponent } from './lista-filmes/lista-filmes.component';
 import { CadastroFilmesComponent } from './cadastro-filmes/cadastro-filmes.component';
 import { CrudFilmesService } from "./crud-filmes.service";
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
+import { CadastroUsuarioService} from "./cadastroUsuarioService/cadastro-usuario.service";
+import { ListaUsuarioComponent } from './lista-usuario/lista-usuario.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'lista', pathMatch: 'full'},
+  { path: '', redirectTo: 'cadastro', pathMatch: 'full'},
   { path: 'lista', component: ListaFilmesComponent},
   { path: 'edicao/:cod', component: CadastroFilmesComponent},
   { path: 'novo', component: CadastroFilmesComponent},
+  { path: 'cadastro', component: CadastroUsuarioComponent},
+  { path: 'perfil', component: ListaUsuarioComponent}
 ]
 
 @NgModule({
@@ -22,7 +26,8 @@ const routes: Routes = [
     AppComponent,
     ListaFilmesComponent,
     CadastroFilmesComponent,
-    CadastroUsuarioComponent
+    CadastroUsuarioComponent,
+    ListaUsuarioComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [CrudFilmesService],
+  providers: [CrudFilmesService, CadastroUsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

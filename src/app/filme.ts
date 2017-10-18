@@ -3,6 +3,6 @@ export class Filme {
     nome: string;
     descricao: string;
     data: Date;
-    imagem: string;;
+    imagem: string;
 
 }
