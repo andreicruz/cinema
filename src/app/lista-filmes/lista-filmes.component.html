@@ -1,15 +1,22 @@
-<h3>{{titulo}}</h3>
-<table>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+
+<table class="center table-striped">
+  <caption>
+    Filmes
+    <a routerLink="/novo"><button type="button" class="btn btn-sm btn-primary btn-create" text-right>Create New</button></a>
+  </caption>
+
   <tr>
-    <th>Código</th> <th>Filme</th> <th>Descrição</th> <th>Data</th> <th>Editar</th> <th>Remover</th>
+    <th>Código</th> <th>Filme</th> <th>Descrição</th> <th>Data</th> <th><em class="fa fa-cog"></em></th>
   </tr>
   <tr *ngFor='let filme of filmes'>
     <td>{{filme.codigo}}</td>
     <td>{{filme.nome}}</td>
     <td>{{filme.descricao}}</td>
     <td>{{filme.data | date:'dd/MM/yyyy'}}</td>
-    <td><a [routerLink]="['/edicao', filme.codigo]">Editar</a></td>
-    <td><a routerLink="/lista" (click)="remover(filme)">Remover</a></td>
+    <td>
+      <a [routerLink]="['/edicao', filme.codigo]" class="btn btn-default"><em class="fa fa-pencil"></em></a>
+      <a routerLink="/lista" (click)="remover(filme)" class="btn btn-danger"><em class="fa fa-trash"></em></a>
+    </td>
   </tr>
 </table>
-<a routerLink="/novo">Novo Filme</a>

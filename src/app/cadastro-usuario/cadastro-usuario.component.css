@@ -30,7 +30,7 @@ input[type=button]:hover{
 }
 
 .form{
+    align-items: center;
     border-radius: 4px;
-    background-color: #F2F2F2;
     padding: 20px;
 }

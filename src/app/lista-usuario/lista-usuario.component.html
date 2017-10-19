@@ -1,10 +1,14 @@
-<table>
-  <tr>
-    <th>Nome</th> <th>CPF</th> <th>IDADE</th>
-  </tr>
-  <tr *ngFor='let pessoa of pessoas'>
-    <td>{{pessoa.nome}}</td>
-    <td>{{pessoa.cpf}}</td>
-    <td>{{pessoa.idade}}</td>
-  </tr>
+<table class="table">
+  <thead>
+    <tr>
+        <th>Nome</th> <th>CPF</th> <th>IDADE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="success" *ngFor='let pessoa of pessoas'>
+        <td>{{pessoa.nome}}</td>
+        <td>{{pessoa.cpf}}</td>
+        <td>{{pessoa.idade}}</td>
+    </tr>
+  </tbody>
 </table>
