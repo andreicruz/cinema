@@ -1,0 +1,11 @@
+<table>
+  <tr>
+    <th>Código</th> <th>Filme</th> <th>Descrição</th> <th>Data</th> <th><em class="fa fa-cog"></em></th>
+  </tr>
+  <tr *ngFor='let favorito of favoritos'>
+    <td>{{favorito.codigo}}</td>
+    <td>{{favorito.nome}}</td>
+    <td>{{favorito.descricao}}</td>
+    <td>{{favorito.data | date:'dd/MM/yyyy'}}</td>
+    <td>
+</table>
