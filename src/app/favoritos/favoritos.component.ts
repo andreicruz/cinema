@@ -9,18 +9,10 @@ import { Router, ActivatedRoute } from "@angular/router";
   styleUrls: ['./favoritos.component.css']
 })
 export class FavoritosComponent implements OnInit {
-  favorito: Filme;
+  favoritos: Filme[]=[];
   codigo: number;
 
-  constructor(private servico:FavoritosService,
-              private router: Router) { }
+  constructor(private servico:FavoritosService) { }
 
-  ngOnInit() { this.favorito = new Filme(); }
-
-  salvarFavorito(){
-    if(isNaN(this.codigo)){
-      this.servico.adicionarFavorito(this.favorito);
-      this.favorito = new Filme();
-    }
-  }
+  ngOnInit() { this.favoritos = this.servico.getFavoritos(); }
 }
