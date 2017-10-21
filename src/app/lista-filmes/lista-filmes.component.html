@@ -1,9 +1,11 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
 
 <table class="center table-striped">
-  <caption>
+  <caption class="panel-tittle">
     Filmes
-    <a routerLink="/novo"><button type="button" class="btn btn-sm btn-primary btn-create" text-right>Create New</button></a>
+    <div class="pull-right">
+        <a routerLink="/novo"><button type="button" class="btn btn-primary">Novo</button></a>
+    </div>
   </caption>
 
   <tr>
@@ -15,8 +17,9 @@
     <td>{{filme.descricao}}</td>
     <td>{{filme.data | date:'dd/MM/yyyy'}}</td>
     <td>
+      <a (click)="salvarFavorito()" value="Favoritar" class="btn btn-primary"><em class="fa fa-thumbs-o-up"></em></a>
       <a [routerLink]="['/edicao', filme.codigo]" class="btn btn-default"><em class="fa fa-pencil"></em></a>
-      <a routerLink="/lista" (click)="remover(filme)" class="btn btn-danger"><em class="fa fa-trash"></em></a>
+      <a routerLink="/lista" (click)="remover(filme)" class="btn btn-default"><em class="fa fa-trash"></em></a>
     </td>
   </tr>
 </table>
