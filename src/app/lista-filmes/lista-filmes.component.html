@@ -17,7 +17,7 @@
     <td>{{filme.descricao}}</td>
     <td>{{filme.data | date:'dd/MM/yyyy'}}</td>
     <td>
-      <a (click)="salvarFavorito()" value="Favoritar" class="btn btn-primary"><em class="fa fa-thumbs-o-up"></em></a>
+      <button type="submit" (click)="salvarFavorito(filme)" value="Favoritar" class="btn btn-primary"><em class="fa fa-thumbs-o-up"></em></button>
       <a [routerLink]="['/edicao', filme.codigo]" class="btn btn-default"><em class="fa fa-pencil"></em></a>
       <a routerLink="/lista" (click)="remover(filme)" class="btn btn-default"><em class="fa fa-trash"></em></a>
     </td>
