@@ -1,10 +1,14 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
 <table>
   <tr>
-    <th>Código</th> <th>Filme</th> <th>Descrição</th> <th>Data</th>
+    <th>Código</th> <th>Filme</th> <th>Descrição</th> <th>Data</th><th><em class="fa fa-cog"></em></th>
   </tr>
   <tr *ngFor='let favorito of favoritos'>
     <td>{{favorito.codigo}}</td>
     <td>{{favorito.nome}}</td>
     <td>{{favorito.descricao}}</td>
     <td>{{favorito.data | date:'dd/MM/yyyy'}}</td>
+    <td>
+        <a routerLink="/perfil/favoritos" (click)="remover(filme)" class="btn btn-default"><em class="fa fa-trash"></em></a>
+      </td>
 </table>
