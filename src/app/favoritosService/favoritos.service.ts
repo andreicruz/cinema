@@ -3,24 +3,22 @@ import { Filme } from "../filme";
 
 @Injectable()
 export class FavoritosService {
-  favoritos: Filme[] = [
-    { codigo: 1, 
-      nome:"Kill Bill", 
-      descricao:"Teste", 
-      data: new Date(),
-      imagem: "images/RoseQuartz.png"}
-  ];
+  favoritos: Filme[] = [];
 
-  autoIncremento:number=2;
-  
   constructor() { }
 
   getFavoritos(){
-    return this.favoritos;
+    return(this.favoritos);
   }
 
-  adicionarFavorito(favorito:Filme){
-    favorito.codigo = this.autoIncremento++;
-    this.favoritos.push(favorito);
+  adicionarFavorito(filme:Filme){
+    this.favoritos.push(filme);
+  }
+
+  removerFavorito(filme:Filme){
+    let indice = this.favoritos.indexOf(filme, 0);
+    if (indice > -1){
+      this.favoritos.splice(indice, 1);
+    }
   }
 }
