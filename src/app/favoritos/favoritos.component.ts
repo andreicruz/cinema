@@ -10,9 +10,15 @@ import { Router, ActivatedRoute } from "@angular/router";
 })
 export class FavoritosComponent implements OnInit {
   favoritos: Filme[]=[];
-  codigo: number;
-
+  
   constructor(private servico:FavoritosService) { }
 
-  ngOnInit() { this.favoritos = this.servico.getFavoritos(); }
+  ngOnInit() { 
+    this.favoritos = this.servico.getFavoritos(); 
+    console.log(this.favoritos);
+  }
+
+  removerFavorito(filme:Filme){
+    this.servico.removerFavorito(filme);
+  }
 }
